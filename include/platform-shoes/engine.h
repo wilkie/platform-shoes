@@ -1,6 +1,8 @@
 #ifndef PLATFORM_SHOES_ENGINE_H
 #define PLATFORM_SHOES_ENGINE_H
 
+#include <platform-shoes/renderer.h>
+
 // This is here instead of the cpp because main() is overriden by
 // preprocessor magicks.
 #ifndef NO_SDL
@@ -20,6 +22,7 @@ namespace PlatformShoes {
 
 		private:
 			VideoSettings _video;
+			Renderer*     _renderer;
 
 			bool _startSDL();
 			bool _initialize();

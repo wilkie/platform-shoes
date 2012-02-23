@@ -7,9 +7,11 @@ PlatformShoes::Engine::Engine(VideoSettings* video) {
 	if (!_initialize()) {
 		return;
 	}
+	_renderer = new Renderer();
 }
 
 void PlatformShoes::Engine::_draw() {
+	_renderer->clear();
 }
 
 void PlatformShoes::Engine::run() {
