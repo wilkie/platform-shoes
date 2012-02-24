@@ -11,6 +11,7 @@ PlatformShoes::Engine::Engine(VideoSettings* video) {
 }
 
 void PlatformShoes::Engine::_draw() {
+	_renderer->setProjection(_video.resolutionX, _video.resolutionY, 1.0);
 	_renderer->clear();
 }
 
