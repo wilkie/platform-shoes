@@ -37,13 +37,13 @@ bool PlatformShoes::Renderer::initializeViewport(unsigned int width, unsigned in
 	return true;
 }
 
-void PlatformShoes::Renderer::setProjection(unsigned int width, unsigned int height, double rotation, double translationX, double translationZ, double zoom) {
+void PlatformShoes::Renderer::setProjection(unsigned int width, unsigned int height, double zoom) {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
 	double aspect = (double)width/(double)height;
-
-    glFrustum(-aspect/2.0, aspect/2.0, -aspect/2.0, aspect/2.0, 5, 100000);
+	glOrtho(0, width, 0, height, -100, 100);
+	glScaled(zoom, zoom, zoom);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
