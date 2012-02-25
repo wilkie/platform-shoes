@@ -139,3 +139,7 @@ bool PlatformShoes::SpriteSheet::textureCoordinates(const char* name, double coo
   }
   return false;
 }
+
+PlatformShoes::Sprite* PlatformShoes::SpriteSheet::sprite(unsigned int index) {
+  return &_sprites[index];
+}
